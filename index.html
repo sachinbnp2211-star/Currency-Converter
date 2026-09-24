@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Responsive currency converter with live exchange rates and safe error handling."
+    />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="converter-card" aria-labelledby="converter-title">
+        <header class="card-header">
+          <p class="eyebrow">Live exchange</p>
+          <h1 id="converter-title">Currency Converter</h1>
+        </header>
+
+        <form class="converter-form" id="converterForm" novalidate>
+          <div class="amount-panel">
+            <label for="amount">Amount</label>
+            <input
+              id="amount"
+              name="amount"
+              type="number"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+              value="1"
+              class="forma"
+              aria-describedby="amount-helper"
+            />
+            <p id="amount-helper" class="field-help">Enter a valid amount greater than or equal to zero.</p>
+          </div>
+
+          <div class="currency-grid" aria-label="Currency selection">
+            <div class="field from">
+              <label for="fromCurrency">From</label>
+              <div class="select-row">
+                <select
+                  id="fromCurrency"
+                  name="fromCurrency"
+                  class="select from-select"
+                  aria-label="From currency"
+                ></select>
+                <img class="flag flag1" src="https://flagsapi.com/US/flat/64.png" alt="United States flag" />
+              </div>
+            </div>
+
+            <button type="button" class="swap-btn" aria-label="Swap currencies">⇅</button>
+
+            <div class="field to">
+              <label for="toCurrency">To</label>
+              <div class="select-row">
+                <select
+                  id="toCurrency"
+                  name="toCurrency"
+                  class="select to-select"
+                  aria-label="To currency"
+                ></select>
+                <img class="flag flag2" src="https://flagsapi.com/IN/flat/64.png" alt="India flag" />
+              </div>
+            </div>
+          </div>
+
+          <div class="result-box" aria-live="polite" aria-atomic="true">
+            <p class="helper-text">Converted amount</p>
+            <p class="dollar result-value">1 USD = 95.76 INR</p>
+            <p class="status-message" id="statusMessage" role="status">Ready to convert.</p>
+          </div>
+
+          <button type="submit" class="convert-btn">Convert</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="./logic.js"></script>
+  </body>
+</html>
