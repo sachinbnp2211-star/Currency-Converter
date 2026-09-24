@@ -66,3 +66,6 @@ Placeholder for screenshots of the desktop and mobile layouts.
 - Add more currency metadata and localized formatting
 - Support conversion history and favorites
 - Add offline fallback messaging and last-known rate display
+git add README.md
+git commit -m "Update README with live demo"
+git push
